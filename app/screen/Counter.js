@@ -24,9 +24,11 @@ const Counter = () => {
     <View style={styles.counterScreenContainer}>
       <CounterNumber number={count} />
       <View style={styles.buttonsContainer}>
-        {count != 0 && (
-          <IconButton onPress={handleDecrement} name={"remove-sharp"} />
-        )}
+        <IconButton
+          disable={count == 0}
+          onPress={handleDecrement}
+          name={"remove-sharp"}
+        />
         <IconButton onPress={handleReset} name={"reload-sharp"} />
         <IconButton onPress={handleIncrement} name={"add-sharp"} />
       </View>
